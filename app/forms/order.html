@@ -1,0 +1,52 @@
+{% extends 'forms/base.html' %}
+
+{% block title %}Utibu Health - Order Medication{% endblock %}
+
+{% block content %}
+<section id="order-medication" class="order-medication">
+    <div class="container">
+        <div class="section-title">
+            <h2>Order Medication</h2>
+            <p>Please fill out the form below to place your medication order.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-lg-6">
+            {{ msg }}
+            <form method="POST" action="{{ url_for('place_order') }}" role="form" class="php-email-forms">
+                <div class="form-group mt-3">
+                    <label for="medication">Medication:</label>
+                    {{ form.medication(class="form-control", placeholder="Enter medication name", autofocus=true) }}
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="quantity">Quantity:</label>
+                    {{ form.quantity(class="form-control", placeholder="Enter quantity") }}
+                </div>
+
+                <!-- Option for picking up medication at the health facility or having it sent -->
+                <div class="form-group mt-3">
+                    <label for="delivery_method">Delivery Method:</label>
+                    <select class="form-control" id="delivery_method" name="delivery_method">
+                        <option value="pick_up">Pick up at health facility</option>
+                        <option value="delivery">Delivery</option>
+                    </select>
+                </div>
+
+                <!-- Option for immediate payment or paying later -->
+                <div class="form-group mt-3">
+                    <label for="payment_method">Payment Method:</label>
+                    <select class="form-control" id="payment_method" name="payment_method">
+                        <option value="immediate_payment">Pay Now</option>
+                        <option value="pay_later">Pay Later</option>
+                    </select>
+                </div>
+
+                <div class="form-group mt-3">
+                    <button type="submit" class="btn btn-primary">Place Order</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

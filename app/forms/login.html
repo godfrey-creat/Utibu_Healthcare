@@ -1,0 +1,33 @@
+{% extends 'forms/base.html' %}
+
+{% block title %}Utibu Health - Login{% endblock %}
+
+{% block content %}
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Login</h2>
+        <p>Please login to access your account.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-lg-6">
+        {{msg}}
+        <form method="POST" action="{{ url_for('login_route') }}" role="form">
+          {{ form.hidden_tag() }}
+          <div class="form-group mt-3">
+            <label for="username">Username:</label>
+            {{ form.email(class="form-control", placeholder="Enter your username", autofocus=true) }}
+          </div>
+          <div class="form-group mt-3">
+            <label for="password">Password:</label>
+            {{ form.password(class="form-control", placeholder="Enter your password") }}
+          </div>
+          <div class="form-group mt-3">
+            <button class="btn btn-primary" type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+{% endblock %}
