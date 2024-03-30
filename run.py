@@ -9,11 +9,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mssql+pyodbc://pharmacist:utibu@Microso
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-from app.api import app
+from app.api.v1 import app
 from app.models.models import db
 
 def create_db():
-    with app.app_context():
+    with app.v1.app_context():
         db.create_all()
 
 if __name__ == '__main__':
