@@ -1,0 +1,59 @@
+{% extends 'forms/base.html' %}
+
+{% block title %}Utibu Health - User Registration{% endblock %}
+
+{% block content %}
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>User Registration</h2>
+            <p>Please fill out the form below to register for an account.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-lg-6">
+            {{ msg }}
+            <form method="POST" action="{{ url_for('registration_route') }}" role="form" class="php-email-forms">
+                <div class="form-group mt-3">
+                    <label for="username">Username:</label>
+                    {{ form.username(class="form-control", placeholder="Enter your username", autofocus=true) }}
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="first_name">First Name:</label>
+                    {{ form.first_name(class="form-control", placeholder="Enter your first name") }}
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="last_name">Last Name:</label>
+                    {{ form.last_name(class="form-control", placeholder="Enter your last name") }}
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="email">Email:</label>
+                    {{ form.email(class="form-control", placeholder="Enter your email") }}
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="phone">Phone Number:</label>
+                    {{ form.phone(class="form-control", placeholder="Enter your phone number") }}
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="password">Password:</label>
+                    {{ form.password(class="form-control", placeholder="Enter your password") }}
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="confirm_password">Confirm Password:</label>
+                    {{ form.confirm_password(class="form-control", placeholder="Confirm your password") }}
+                </div>
+
+                <div class="form-group mt-3">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

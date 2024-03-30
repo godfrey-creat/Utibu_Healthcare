@@ -1,0 +1,101 @@
+{% extends 'forms/base.html' %}
+
+{% block title %}Utibu Health - Home{% endblock %}
+
+{% block content %}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url(../static/assets/img/slide/slide-1.jpg)">
+          <div class="container">
+            <h2>Welcome to Utibu Health</h2>
+            <p>Providing quality healthcare for chronic conditions</p>
+            <a href="#about" class="btn-get-started scrollto">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item" style="background-image: url(../static/assets/img/slide/slide-2.jpg)">
+          <div class="container">
+            <h2>Order Medication Online</h2>
+            <p>Order your medication remotely from our mobile app</p>
+            <a href="#order-medication" class="btn-get-started scrollto">Place Order</a>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item" style="background-image: url(../static/assets/img/slide/slide-3.jpg)">
+          <div class="container">
+            <h2>Convenient Refills</h2>
+            <p>Refill your prescriptions easily without visiting the pharmacy</p>
+            <a href="#order-medication" class="btn-get-started scrollto">Refill Prescription</a>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="fas fa-heartbeat"></i></div>
+              <h4 class="title"><a href="">HIV Care</a></h4>
+              <p class="description">Comprehensive care and support for HIV patients</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="fas fa-pills"></i></div>
+              <h4 class="title"><a href="">Diabetes Management</a></h4>
+              <p class="description">Effective management and treatment for diabetes</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="fas fa-thermometer"></i></div>
+              <h4 class="title"><a href="">Hypertension Control</a></h4>
+              <p class="description">Control and prevention strategies for hypertension</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon"><i class="fas fa-dna"></i></div>
+              <h4 class="title"><a href="">Medication Ordering</a></h4>
+              <p class="description">Order your medication remotely through our mobile app</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Featured Services Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+        <div class="text-center">
+          <h3>Experience Quality Healthcare</h3>
+          <p>Join us in providing a healthier future for all</p>
+          <a class="cta-btn scrollto" href="#order-medication">Order Medication</a>
+        </div>
+      </div>
+    </section><!-- End Cta Section -->
+  </main><!-- End #main -->
+{% endblock %}

@@ -82,44 +82,9 @@ with app.app_context():
         form = OrderForm
         if request.method == 'POST':
             # You should add code here to place an order
-            def validate_order(order_details):
-                medication = order_details.get('medication')
-                quantity = order_details.get('quantity')
-
-                if not medication or not quantity:
-                    return False, "medication and quantity are required field"
-                
-                #check if medication are available in inentory.
-                is_available, error_message = check_inventory(medication, quantity)
-                if not is_available:
-                    return False, " Medication is not available"
-                return True, None
-            
-            def check_inventory(medication, quantity):
-                available_quantity = get_available_quantity_from_inventory(medication)
-                if available_quantity < quantity:
-                    return False, "Not enough stock available for medication: {medication}. Available quantity: {available_quantity}"
-                return True, None
-            def save_order_to_legacy_database(order_details):
-                try:
-                    legacy_database_conn = legacy_database_connector.connect()
-                    #insert order deatails
-                    cursor = legacy_database_conn.cursor()
-                    cursor.execute("INSERT INTO orders (medication, quantity) VALUES (%s, %s)", (order_details['medication', 'quantity']))
-                    legacy_database_conn.commit()
-                    cursor.close()
-
-                    #close the db connection
-                    legacy_database_conn.colse()
-
-                    return True, None
-                except Exception as e:
-                    return False, str(e)
-               
             pass
         return render_template('order.html')
-    pass
+
 # Run the Flask app
 if __name__ == '__main__':
     app.run(debug=True)
-
