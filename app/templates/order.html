@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order - Utibu Health</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <h1>Order Medication</h1>
+    <form action="{{ url_for('order.place_order') }}" method="post">
+        <!-- Add form fields for ordering medication here -->
+        <input type="submit" value="Place Order">
+    </form>
+</body>
+</html>
