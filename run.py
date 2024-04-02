@@ -1,20 +1,10 @@
 #! /usr/bin/env python
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mssql+pyodbc://pharmacist:utibu@Microsoft SQL Server/latency_database?driver=ODBC+Driver+17+for+SQL+Server'
-
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
-
-from app.api.v1 import app
+from app.api.v1.app import app
 from app.models.models import db
 
 def create_db():
-    with app.v1.app_context():
-        db.create_all()
+        with app.app_context():
+              db.create_all()
 
 if __name__ == '__main__':
     create_db()

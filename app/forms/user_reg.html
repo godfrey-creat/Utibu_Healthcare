@@ -13,11 +13,7 @@
     <div class="container">
         <div class="col-lg-6">
             {{ msg }}
-            <form method="POST" action="{{ url_for('registration_route') }}" role="form" class="php-email-forms">
-                <div class="form-group mt-3">
-                    <label for="username">Username:</label>
-                    {{ form.username(class="form-control", placeholder="Enter your username", autofocus=true) }}
-                </div>
+            <form method="POST" action="{{ url_for('user_registration') }}" role="form" class="php-email-forms">
 
                 <div class="form-group mt-3">
                     <label for="first_name">First Name:</label>
