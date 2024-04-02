@@ -123,6 +123,9 @@ with app.app_context():
         'paracetamol': 100,
         'insulin': 50,
         'arithromycin': 250,
+        'insulin': 500,
+        'probeta': 400,
+        'ARVs': 2000,
         # Add more medication
     }
 
