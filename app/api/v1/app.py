@@ -2,12 +2,8 @@
 '''application API'''
 
 import os
-import pyodbc
-import urllib.parse
 from os import getenv
 from flask_cors import CORS
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 from flask import Flask, render_template, request, redirect, url_for, jsonify, abort
 from flask_bcrypt import bcrypt, Bcrypt
 from flask_login import LoginManager, login_user, current_user, login_required
